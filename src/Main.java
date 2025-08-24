@@ -2,68 +2,78 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //1st task
-        int age = 17;
-        if (age >= 18) {
-            System.out.println("Если возраст человека равен " + age + ", то он совершеннолетний");
-        } else {
-            System.out.println("Если возраст человека равен " + age + ", то он не достиг совершеннолетия, нужно немного подождать");
+        //1st task-- 0-ios, 1-android
+        int clientOS = 1;
+        if (clientOS == 0) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        } else if (clientOS == 1) {
+            System.out.println("Установите версию приложения для Android по ссылке");
         }
-        //2nd task
-        int temperature = 35;
-        if (temperature < 5) {
-            System.out.println("На улице холодно, нужно надеть шапку");
-        } else {
-            System.out.println("Сегодня тепло, можно идти без шапки");
+        //2nd task-- 0-ios, 1-android
+        int clientOSys = 0;
+        int yearOfRelease = 2012;
+        if (clientOSys == 0) {
+            if (yearOfRelease < 2015) {
+                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+            } else {
+                System.out.println("Установите версию приложения для iOS по ссылке");
+            }
+        } else if (clientOSys == 1) {
+            if (yearOfRelease < 2015) {
+                System.out.println("Установите облегченную версию приложения для Android по ссылке");
+            } else {
+                System.out.println("Установите версию приложения для Android по ссылке");
+            }
         }
         //3rd task
-        int speed = 60;
-        if (speed > 60) {
-            System.out.println("Если скорость " + speed + ", то придется заплатить штраф");
-        } else {
-            System.out.println("Если скорость " + speed + ", то можно ездить спокойно");
+        int year = 2021;
+        if (year >= 1584){
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+                System.out.println(year + " год является високосным");
+            }else{
+                System.out.println(year + " год не является високосным");
+            }
         }
         //4th task
-        int humanAge = 18;
-        if (humanAge >= 2 && humanAge <= 6) {
-            System.out.println("Если возраст человека равен " + humanAge + ", то ему нужно ходить в детский сад");
-        } else if (humanAge >= 7 && humanAge <= 17) {
-            System.out.println("Если возраст человека равен " + humanAge + ", то ему нужно ходить в школу");
-        } else if (humanAge >= 18 && humanAge <= 24) {
-            System.out.println("Если возраст человека равен " + humanAge + ", то ему нужно ходить в университет");
-        } else {
-            System.out.println("Если возраст человека равен " + humanAge + ", то ему нужно ходить на работу");
+        int deliveryDistance = 95;
+        int deliveryDays = 1;
+        if (deliveryDistance > 100){
+            System.out.println("Доставка не осуществляется");
+        }else if (deliveryDistance >= 60 && deliveryDistance <=100) {
+            (deliveryDays) += 2;
+            System.out.println("Потребуется дней: " + deliveryDays);
+        }else if (deliveryDistance >= 20 && deliveryDistance <= 60) {
+            (deliveryDays) += 1;
+            System.out.println("Потребуется дней: " + deliveryDays);
+        }else{
+            System.out.println("Потребуется дней: " + deliveryDays);
         }
         //5th task
-        int childAge = 14;
-        if (childAge < 5) {
-            System.out.println("Нельзя кататься на аттракционе");
+        int monthNumber = 44;
+        if (monthNumber < 1 || monthNumber > 12){
+            System.out.println("Некорректно введен номер месяца. Допускается номер месяца от 1 до 12");
         }
-        if (childAge >= 5 && childAge <= 14) {
-            System.out.println("Можно кататься на аттракционе в сопровождении взрослого");
-        } else {
-            System.out.println("Можно кататься на аттракционе без сопровождения взрослого");
-        }
-        //6th task
-        int numberOfPassengers = 60;
-        if (numberOfPassengers < 60) {
-            System.out.println("В вагоне есть сидячее место");
-        }
-        if (numberOfPassengers >= 60 && numberOfPassengers < 102) {
-            System.out.println("В вагоне остались только стоячие места");
-        } else {
-            System.out.println("В вагоне не осталось мест");
-        }
-        //7th task
-        int one = 3;
-        int two = 2;
-        int three = 3;
-        if (one >= two && one >= three) {
-            System.out.println(one);
-        } else if (two >= one && two >= three) {
-            System.out.println(two);
-        } else {
-            System.out.println(three);
+        switch (monthNumber){
+            case 12:
+            case 1:
+            case 2:
+                System.out.println("зима");
+                break;
+            case 3:
+            case 4:
+            case 5:
+                System.out.println("весна");
+                break;
+            case 6:
+            case 7:
+            case 8:
+                System.out.println("лето");
+                break;
+            case 9:
+            case 10:
+            case 11:
+                System.out.println("осень");
+                break;
         }
     }
 }
